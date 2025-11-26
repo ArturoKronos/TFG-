@@ -11,14 +11,13 @@
 # Enlaces a recursos de la unidad
 
 # Bibliografía / Webgrafía 
-## Webgrafía y fuentes de referencia
+## Webgrafía — documentación oficial y guías reconocidas
 
-- **INCIBE — Buenas prácticas en el área de informática**: https://www.incibe.es/empresas/que-te-interesa/buenas-practicas-area-informatica :contentReference[oaicite:1]{index=1}  
-- **INCIBE — Diseño y configuración de IPS, IDS y SIEM en sistemas industriales** (guía técnica): https://www.incibe.es/sites/default/files/contenidos/guias/doc/certsi_diseno_configuracion_ips_ids_siem_en_sci.pdf :contentReference[oaicite:2]{index=2}  
-- **INCIBE — Catálogo de ciberseguridad y soluciones para empresas** (PDF): https://www.incibe.es/sites/default/files/contenidos/guias/doc/catalogo_ciberseguridad.pdf :contentReference[oaicite:3]{index=3}  
-- **Artículo: ¿Qué son y para qué sirven los SIEM, IDS e IPS?** (explicación práctica de estos sistemas): https://www.incibe.es/empresas/blog/son-y-sirven-los-siem-ids-e-ips :contentReference[oaicite:4]{index=4}  
-- **Suricata / Nmap / Grafana — sitios oficiales y documentación**:  
-  - Nmap: https://nmap.org/  
-  - Suricata: https://suricata-ids.org/  
-  - Grafana: https://grafana.com/  
+| Herramienta / Tema | Enlace / Guía oficial |
+|--------------------|------------------------|
+| **Suricata** — guía de usuario, instalación, configuración y uso como IDS/IPS | https://docs.suricata.io/en/suricata-8.0.2/ :contentReference[oaicite:1]{index=1} |
+| Suricata — página oficial de documentación con guía de inicio rápido y manual completo | https://suricata.io/documentation/ :contentReference[oaicite:2]{index=2} |
+| **Nmap** — manual/reference oficial en español del escáner de red | https://nmap.org/man/es/index.html :contentReference[oaicite:4]{index=4} |
+| **INCIBE / CERTSI** — guía “Diseño y configuración de IPS, IDS y SIEM en sistemas industriales” (PDF oficial) | https://www.incibe.es/sites/default/files/contenidos/guias/doc/certsi_diseno_configuracion_ips_ids_siem_en_sci.pdf :contentReference[oaicite:7]{index=7} |
+| Uso conjunto de Suricata + visualización en **Grafana** — dashboard oficial para visualización IDS/IPS (modo ejemplo de integración) | https://grafana.com/grafana/dashboards/14893-ids-ips/ :contentReference[oaicite:9]{index=9} |
 
