@@ -1,6 +1,15 @@
 # Proyecto 2ASIR IES Rodrigo Caro
 ## Nombre del alumno: Arturo Kronos Fernández Curiel 
----
+**Diseño de Infraestructura Empresarial Segura y Automatizada**
+
+![Redes](https://img.shields.io/badge/Redes-SRI-blue)
+![Sistemas Operativos](https://img.shields.io/badge/SO-ASO-orange)
+![Servicios y Automatización](https://img.shields.io/badge/SAD%20%2F%20IAW-lightblue)
+![Bases de datos](https://img.shields.io/badge/SGBD-MySQL%20%2F%20PostgreSQL-green)
+![Seguridad](https://img.shields.io/badge/Seguridad-IPE2-red)
+![Inglés Técnico](https://img.shields.io/badge/Inglés-INGLÉS-yellow)
+![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
+
 ## Título del proyecto: Arquitectura de Detección y Vigilancia de Amenazas en Cocacusca usando Nmap, Suricata y Grafana
 ---
 ## Índice del proyecto
@@ -38,11 +47,3 @@
 3. Evaluación del proyecto  
 4. Documentación de cierre  
 
----
-![Redes](https://img.shields.io/badge/Redes-SRI-blue)
-![Sistemas Operativos](https://img.shields.io/badge/SO-ASO-orange)
-![Servicios y Automatización](https://img.shields.io/badge/SAD%20%2F%20IAW-lightblue)
-![Bases de datos](https://img.shields.io/badge/SGBD-MySQL%20%2F%20PostgreSQL-green)
-![Seguridad](https://img.shields.io/badge/Seguridad-IPE2-red)
-![Inglés Técnico](https://img.shields.io/badge/Inglés-INGLÉS-yellow)
-![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
