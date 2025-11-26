@@ -13,11 +13,39 @@
 
 # Webgrafía — documentación oficial y guías reconocidas
 
-| Herramienta / Tema | Enlace / Guía oficial |
-|--------------------|------------------------|
-| **Suricata** — guía de usuario, instalación, configuración y uso como IDS/IPS | https://docs.suricata.io/en/suricata-8.0.2/  |
-| Suricata — página oficial de documentación con guía de inicio rápido y manual completo | https://suricata.io/documentation/  |
-| **Nmap** — manual/reference oficial en español del escáner de red | https://nmap.org/man/es/index.html |
-| **INCIBE / CERTSI** — guía “Diseño y configuración de IPS, IDS y SIEM en sistemas industriales” (PDF oficial) | https://www.incibe.es/sites/default/files/contenidos/guias/doc/certsi_diseno_configuracion_ips_ids_siem_en_sci.pdf  |
-| Uso conjunto de Suricata + visualización en **Grafana** — dashboard oficial para visualización IDS/IPS (modo ejemplo de integración) | https://grafana.com/grafana/dashboards/14893-ids-ips/  |
+
+<div style="font-size: 13px;">
+
+<table>
+<thead>
+<tr>
+<th>Herramienta / Tema</th>
+<th>Enlace / Guía oficial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Suricata</b> — guía de usuario, instalación, configuración y uso como IDS/IPS</td>
+<td>https://docs.suricata.io/en/suricata-8.0.2/</td>
+</tr>
+<tr>
+<td>Suricata — página oficial de documentación con guía de inicio rápido y manual completo</td>
+<td>https://suricata.io/documentation/</td>
+</tr>
+<tr>
+<td><b>Nmap</b> — manual/reference oficial en español del escáner de red</td>
+<td>https://nmap.org/man/es/index.html</td>
+</tr>
+<tr>
+<td><b>INCIBE / CERTSI</b> — guía “Diseño y configuración de IPS, IDS y SIEM en sistemas industriales” (PDF oficial)</td>
+<td>https://www.incibe.es/sites/default/files/contenidos/guias/doc/certsi_diseno_configuracion_ips_ids_siem_en_sci.pdf</td>
+</tr>
+<tr>
+<td>Uso conjunto de Suricata + visualización en <b>Grafana</b> — dashboard oficial (ejemplo de integración)</td>
+<td>https://grafana.com/grafana/dashboards/14893-ids-ips/</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 
