@@ -1,4 +1,4 @@
-# 4. Oportunidades y viabilidad del proyecto
+# *Oportunidades y viabilidad del proyecto*
 
 La implantación de un **sistema de detección y monitorización de intrusiones** en **Cocacusca** representa una oportunidad estratégica para mejorar la **seguridad** y la **gestión tecnológica** de la empresa. Actualmente, la compañía **no dispone de mecanismos avanzados** de control del tráfico ni de alertas ante posibles amenazas, por lo que este proyecto cubrirá una **necesidad real y prioritaria**.
 
