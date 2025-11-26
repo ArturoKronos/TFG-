@@ -1,4 +1,4 @@
-# Objetivo del proyecto
+# *Objetivo del proyecto*
 
 El **objetivo principal** es implantar en **Cocacusca S.L.** un **sistema de detección y monitorización de intrusiones** que permita:
 
