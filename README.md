@@ -3,8 +3,7 @@
 
 
 
-# Desarrollo de una Plataforma Automatizada de Auditoría de Seguridad Web para PYMES con Módulo Especializado en WordPress
-
+# Arquitectura de Detección y Vigilancia de Amenazas en Cocacusca usando Nmap, Suricata y Grafana
 ## Índice del proyecto
 
 ### [UD1 – Análisis del entorno y detección de necesidades tecnológicas](./UD1/ud1.md)
