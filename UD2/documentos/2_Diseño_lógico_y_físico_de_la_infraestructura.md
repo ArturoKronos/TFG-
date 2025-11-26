@@ -1,4 +1,4 @@
-## 2. Diseño lógico y físico de la infraestructura
+## Diseño lógico y físico de la infraestructura
 
 ---
 
