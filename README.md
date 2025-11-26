@@ -9,7 +9,7 @@
 ![Inglés Técnico](https://img.shields.io/badge/Inglés-INGLÉS-yellow)
 ![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
 ## Nombre del alumno: Arturo Kronos Fernández Curiel 
----
+
 ## Título del proyecto: Arquitectura de Detección y Vigilancia de Amenazas en Cocacusca usando Nmap, Suricata y Grafana
 ---
 ## Índice del proyecto
