@@ -1,4 +1,4 @@
-# *2. Selección de la empresa o contexto de trabajo* 
+# *Selección de la empresa o contexto de trabajo* 
 ---
 
 Cocacusca es una pequeña empresa dedicada a la distribución de productos antiguos. Su sede principal se encuentra en Sevilla y cuenta con 25 empleados, entre personal de oficina, producción y reparto. Dispone además de una plataforma web para la gestión de pedidos y clientes.
