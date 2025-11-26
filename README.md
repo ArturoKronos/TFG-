@@ -46,6 +46,3 @@
 ![Seguridad](https://img.shields.io/badge/Seguridad-IPE2-red)
 ![Inglés Técnico](https://img.shields.io/badge/Inglés-INGLÉS-yellow)
 ![Escalabilidad y Cloud](https://img.shields.io/badge/Infraestructura-Cloud%20%26%20Escalable-purple)
-
-# Autor
-Arturo Kronos Fernández Curiel 
