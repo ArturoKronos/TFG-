@@ -1,5 +1,5 @@
 
-# *1. Análisis del sector tecnológico*
+# * Análisis del sector tecnológico*
 ---
 Cocacusca es una empresa dedicada a la  distribución de productos antiguos. En los últimos años, ha apostado por la digitalización de sus procesos, incorporando sistemas informáticos para la gestión de inventarios, pedidos y ventas en línea.
 
