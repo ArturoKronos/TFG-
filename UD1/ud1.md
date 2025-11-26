@@ -1,9 +1,10 @@
 [Volver al índice general](../README.md)
-
-
-![ud1](./img/foto1.png.png)
-
 # UD1 – Análisis del entorno y detección de necesidades tecnológicas
+
+<p align="center">
+  <img src="./img/foto1.png.png" alt="ud1" width="400"/>
+</p>
+
 
 1. [ Análisis del sector tecnológico](./documentos/1_analisis_del_sector_tecnologico.md)
 2. [Selección de la empresa o contexto de trabajo](./documentos/2_Selección_de_la_empresa.md)
