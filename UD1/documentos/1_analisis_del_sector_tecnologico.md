@@ -1,6 +1,6 @@
 
 # *1. Análisis del sector tecnológico*
-
+---
 Cocacusca es una empresa dedicada a la  distribución de productos antiguos. En los últimos años, ha apostado por la digitalización de sus procesos, incorporando sistemas informáticos para la gestión de inventarios, pedidos y ventas en línea.
 
 Este avance tecnológico ha incrementado su dependencia de las redes y sistemas digitales, lo que también ha aumentado el riesgo de sufrir ciberataques o accesos no autorizados. En este contexto, la seguridad informática se ha convertido en un aspecto esencial para garantizar la continuidad del negocio y la protección de la información.
