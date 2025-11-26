@@ -1,4 +1,4 @@
-# Cumplimiento legal y buenas prácticas en seguridad informática
+# *Cumplimiento legal y buenas prácticas en seguridad informática*
 
 El **proyecto de seguridad informática** en **Cocacusca** debe desarrollarse cumpliendo con las **principales normativas legales** vigentes en materia de **protección de datos** y **seguridad de la información**.
 
