@@ -11,3 +11,10 @@
 # Enlaces a recursos de la unidad
 
 # Bibliografía / Webgrafía 
+## 📚 Webgrafía y fuentes de referencia
+
+- **Suricata** — descripción, capacidades y guía de instalación como IDS/IPS/NSM. :contentReference[oaicite:2]{index=2}  
+- **Nmap** — herramienta open‑source para escaneo de red y descubrimiento de dispositivos/servicios. (citada junto a Suricata en literatura de seguridad de red) :contentReference[oaicite:4]{index=4}  
+- Uso conjunto de Suricata + visualización de alertas con **Grafana** — integración de métricas/eventos de red en dashboards para monitorización. :contentReference[oaicite:6]{index=6}  
+- Normativas y buenas prácticas en seguridad de la información: marco de referencia para implementar medidas seguras y normativas en pequeñas/medianas empresas. :contentReference[oaicite:7]{index=7}  
+- Guías académicas y prácticas de instalación/configuración de sistemas IDS con Suricata, incluyendo ejemplos de escaneo con Nmap y detección de alertas. :contentReference[oaicite:8]{index=8}  
