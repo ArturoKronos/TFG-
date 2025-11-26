@@ -1,7 +1,7 @@
 [Volver al índice general](../README.md)
 
 
-![ud1](./img/foto1.png)
+![ud1](./img/foto1.png.png)
 
 # UD1 – Análisis del entorno y detección de necesidades tecnológicas
 
