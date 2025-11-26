@@ -40,8 +40,6 @@
 4. Documentación de cierre  
 
 ---
-**Diseño de Infraestructura Empresarial Segura y Automatizada**
-
 ![Redes](https://img.shields.io/badge/Redes-SRI-blue)
 ![Sistemas Operativos](https://img.shields.io/badge/SO-ASO-orange)
 ![Servicios y Automatización](https://img.shields.io/badge/SAD%20%2F%20IAW-lightblue)
