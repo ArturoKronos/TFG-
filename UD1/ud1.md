@@ -1,4 +1,6 @@
 [Volver al índice general](../README.md)
+
+
 # UD1 – Análisis del entorno y detección de necesidades tecnológicas
 
 1. [ Análisis del sector tecnológico](./documentos/1_analisis_del_sector_tecnologico.md)
@@ -8,10 +10,8 @@
 5. [Obligaciones legales y normativas](./documentos/5_Obligaciones_legales_y_normativas.md)
 6. [Guion inicial del proyecto](./documentos/6_Guion_inicial_del_proyecto.md)
 
-# Enlaces a recursos de la unidad
 
-# Bibliografía / Webgrafía 
-## Webgrafía — documentación oficial y guías reconocidas
+# Webgrafía — documentación oficial y guías reconocidas
 
 | Herramienta / Tema | Enlace / Guía oficial |
 |--------------------|------------------------|
