@@ -1,4 +1,4 @@
-# 3. Identificación de necesidades tecnológicas
+# *Identificación de necesidades tecnológicas*
 --- 
 
 Tras analizar la infraestructura actual de Cocacusca, se han identificado varias necesidades tecnológicas relacionadas con la seguridad y la monitorización de la red.
