@@ -1,4 +1,4 @@
-# 4. Recursos y Presupuestos
+# Recursos y Presupuestos
 
 ---
 
