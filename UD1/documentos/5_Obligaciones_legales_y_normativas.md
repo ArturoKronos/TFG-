@@ -38,7 +38,7 @@ El sistema deberá:
 
 ---
 
-Cumpliendo estos principios, **Cocacusca S.L.** podrá:
+Cumpliendo estos principios, **Cocacusca** podrá:
 
 - Mantener la **seguridad de su red**  
 - Respetar las **obligaciones legales**  
