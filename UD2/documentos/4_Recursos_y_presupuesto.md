@@ -4,7 +4,7 @@
 
 ## **1. Recursos Necesarios**
 
-El proyecto requiere una combinación de recursos **hardware**, **software** y **humanos**, orientados a implementar un sistema de monitorización e IDS adaptado a una pequeña empresa como Cocacusca S.L.
+El proyecto requiere una combinación de recursos **hardware**, **software** y **humanos**, orientados a implementar un sistema de monitorización e IDS adaptado a una pequeña empresa como Cocacusca
 
 ---
 
