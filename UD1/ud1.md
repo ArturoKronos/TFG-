@@ -11,10 +11,14 @@
 # Enlaces a recursos de la unidad
 
 # Bibliografía / Webgrafía 
-## 📚 Webgrafía y fuentes de referencia
+## Webgrafía y fuentes de referencia
 
-- **Suricata** — descripción, capacidades y guía de instalación como IDS/IPS/NSM. :contentReference[oaicite:2]{index=2}  
-- **Nmap** — herramienta open‑source para escaneo de red y descubrimiento de dispositivos/servicios. (citada junto a Suricata en literatura de seguridad de red) :contentReference[oaicite:4]{index=4}  
-- Uso conjunto de Suricata + visualización de alertas con **Grafana** — integración de métricas/eventos de red en dashboards para monitorización. :contentReference[oaicite:6]{index=6}  
-- Normativas y buenas prácticas en seguridad de la información: marco de referencia para implementar medidas seguras y normativas en pequeñas/medianas empresas. :contentReference[oaicite:7]{index=7}  
-- Guías académicas y prácticas de instalación/configuración de sistemas IDS con Suricata, incluyendo ejemplos de escaneo con Nmap y detección de alertas. :contentReference[oaicite:8]{index=8}  
+- **INCIBE — Buenas prácticas en el área de informática**: https://www.incibe.es/empresas/que-te-interesa/buenas-practicas-area-informatica :contentReference[oaicite:1]{index=1}  
+- **INCIBE — Diseño y configuración de IPS, IDS y SIEM en sistemas industriales** (guía técnica): https://www.incibe.es/sites/default/files/contenidos/guias/doc/certsi_diseno_configuracion_ips_ids_siem_en_sci.pdf :contentReference[oaicite:2]{index=2}  
+- **INCIBE — Catálogo de ciberseguridad y soluciones para empresas** (PDF): https://www.incibe.es/sites/default/files/contenidos/guias/doc/catalogo_ciberseguridad.pdf :contentReference[oaicite:3]{index=3}  
+- **Artículo: ¿Qué son y para qué sirven los SIEM, IDS e IPS?** (explicación práctica de estos sistemas): https://www.incibe.es/empresas/blog/son-y-sirven-los-siem-ids-e-ips :contentReference[oaicite:4]{index=4}  
+- **Suricata / Nmap / Grafana — sitios oficiales y documentación**:  
+  - Nmap: https://nmap.org/  
+  - Suricata: https://suricata-ids.org/  
+  - Grafana: https://grafana.com/  
+
