@@ -10,3 +10,20 @@
 4. [Documentación de cierre](./documentos/4_Documentación_de_cierre.md)
 
 # Webgrafía – Documentación Oficial
+## Webgrafía
+
+- **PMBOK – Project Management Institute**  
+  Directrices para seguimiento y control de proyectos.  
+  https://www.pmi.org/pmbok-guide-standards  
+
+- **ISO 21500:2012 – Directrices para la gestión de proyectos**  
+  Marco general de evaluación, control y seguimiento.  
+  https://www.iso.org/standard/50003.html  
+
+- **Ubuntu Server Docs**  
+  Seguimiento, systemctl y health checks.  
+  https://ubuntu.com/server/docs  
+
+- **VirtualBox Documentation**  
+  Gestión de snapshots y entornos de prueba.  
+  https://www.virtualbox.org/manual/
