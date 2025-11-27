@@ -12,7 +12,6 @@
 5. [Documentación técnica](./documentos/5_Documentación_técnica.md)
 
 
-## Referencias
 
 # Webgrafía – Documentación Oficial
 
