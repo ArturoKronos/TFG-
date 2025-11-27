@@ -23,7 +23,7 @@ sudo systemctl enable --now suricata
 sudo systemctl status suricata --no-pager
 ```
 Esto confirmará que Suricata está activo.
-## 3. Configurar salida de alertas en JSON
+### 3. Configurar salida de alertas en JSON
 Suricata necesita guardar las alertas en un fichero que luego Promtail enviará a Loki.
 Edita el fichero principal de configuración:
 ```bash
@@ -48,3 +48,16 @@ outputs:
         - drop
 
 ```
+### 4. Reiniciar Suricata para aplicar cambios
+```bash
+sudo systemctl restart suricata
+
+```
+Verifica que el fichero *eve.json* existe:
+```bash
+ls -l /var/log/suricata/eve.json
+sudo tail -n 5 /var/log/suricata/eve.json
+
+```
+
+
