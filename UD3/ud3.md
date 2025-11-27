@@ -11,3 +11,13 @@
 5. [Valoración económica y control de costes](./documentos/5_Valoración_económica_y_control_de_costes.md)
 
 # Webgrafía – Documentación Oficial
+## Webgrafía (Documentación oficial)
+
+- **Nmap** — https://nmap.org/book/man.html  
+- **Suricata IDS** — https://docs.suricata.io/  
+- **Emerging Threats Rules** — https://rules.emergingthreats.net/  
+- **Grafana OSS** — https://grafana.com/docs/  
+- **Ubuntu Server** — https://ubuntu.com/server/docs  
+- **pfSense CE** — https://docs.netgate.com/pfsense/en/latest/  
+- **VirtualBox** — https://www.virtualbox.org/manual/  
+- **GitHub Docs** — https://docs.github.com/
