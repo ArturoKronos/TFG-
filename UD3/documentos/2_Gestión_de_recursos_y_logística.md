@@ -1,4 +1,4 @@
-## 2. Gestión de Recursos y Logística
+# Gestión de Recursos y Logística
 
 La correcta ejecución del proyecto requiere una planificación coordinada de los recursos humanos, materiales y técnicos, junto con una organización logística que garantice el desarrollo fluido de cada fase.
 
