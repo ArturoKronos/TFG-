@@ -358,7 +358,7 @@ Al iniciar sesión, Grafana solicitará cambiar la contraseña. Introduce una nu
 
 ---
 
-## Paso 12: Conectar Elasticsearch con Grafana
+## Conectar Elasticsearch con Grafana
 
 Ya dentro de Grafana:
 
