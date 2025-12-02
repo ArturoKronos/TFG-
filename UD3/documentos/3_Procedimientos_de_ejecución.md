@@ -227,3 +227,84 @@ sudo systemctl start elasticsearch
 ```bash
 sudo systemctl status elasticsearch
 ```
+Ahora vamos a probar que Elasticsearch responde correctamente:
+```bash
+curl -k -u elastic:TU_CONTRASEÑA https://localhost:9200
+```
+(Reemplaza TU_CONTRASEÑA por la contraseña que guardaste antes)
+Deberías ver algo como:
+```bash
+{
+  "name" : "...",
+  "cluster_name" : "elasticsearch",
+  "version" : { ... },
+  ...
+}
+```
+Instalar Filebeat
+Filebeat se encargará de enviar los logs de Suricata a Elasticsearch
+Instálalo:
+```bash
+sudo apt install filebeat -y
+```
+Configurar Filebeat
+Ahora vamos a configurar Filebeat para que lea los logs de Suricata:
+Habilita el módulo de Suricata en Filebeat:
+```bash
+sudo filebeat modules enable suricata
+```
+Edita la configuración del módulo:
+```bash
+sudo nano /etc/filebeat/modules.d/suricata.yml
+```
+Cambia enabled: false por enabled: true y asegúrate que la ruta del log sea correcta:
+```bash
+- module: suricata
+  eve:
+    enabled: true
+    var.paths: ["/var/log/suricata/eve.json"]
+```
+Configurar conexión a Elasticsearch
+Edita el archivo principal de Filebeat:
+```bash
+sudo nano /etc/filebeat/filebeat.yml
+```
+Este archivo es largo. Vamos a buscar y modificar dos secciones:
+1. Busca: output.elasticsearch (presiona Ctrl + W)
+Verás algo como:
+```bash
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+```
+Modifícalo para que quede así:
+```bash
+output.elasticsearch:
+  hosts: ["https://localhost:9200"]
+  username: "elastic"
+  password: "TU_CONTRASEÑA_AQUI"
+  ssl.verification_mode: none
+```
+2. Busca: setup.kibana (presiona Ctrl + W)
+Comenta esa sección completa (no la necesitamos ahora). Pon # delante de las líneas o simplemente déjala como está.
+Guardar:
+
+Ctrl + O → Enter
+Ctrl + X
+
+Cargar configuración y arrancar Filebeat
+```bash
+sudo filebeat setup -e
+```
+Cuando termine, inicia Filebeat:
+```bash
+sudo systemctl enable filebeat
+```
+```bash
+sudo systemctl start filebeat
+```
+Verifica que está corriendo:
+```bash
+sudo systemctl status filebeat
+```
+ Instalar Grafana
+Añade el repositorio de Grafana:
