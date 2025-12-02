@@ -359,14 +359,14 @@ Te pedirá que cambies la contraseña. Pon una nueva contraseña (puede ser simp
 PASO 12: Conectar Elasticsearch con Grafana
 Una vez dentro de Grafana:
 
-En el menú lateral izquierdo, busca el icono de engranaje ⚙️ o haz clic en "Connections" → "Data sources" (Fuentes de datos)
+En el menú lateral izquierdo, busca el icono de engranaje  o haz clic en "Connections" → "Data sources" (Fuentes de datos)
 Haz clic en "Add data source" o "Add new data source"
 Busca y selecciona "Elasticsearch"
 Configúralo así:
 
 Name: Suricata
 URL: https://localhost:9200
-Auth: Marca ✅ "Basic auth" y ✅ "Skip TLS Verify" (o "With CA Cert" si no aparece Skip TLS)
+Auth: Marca "Basic auth" y  "Skip TLS Verify" (o "With CA Cert" si no aparece Skip TLS)
 Basic Auth Details:
 
 User: elastic
@@ -379,3 +379,36 @@ Version: Selecciona la versión 8.x o la más reciente
 
 
 Baja hasta abajo y haz clic en "Save & test"
+Crear un Dashboard en Grafana
+Ahora vamos a crear un dashboard básico para visualizar los ataques detectados por Suricata.
+
+En el menú lateral izquierdo de Grafana, haz clic en el icono "+" o busca "Dashboards"
+Haz clic en "Create Dashboard" → "Add visualization"
+Selecciona la fuente de datos "Suricata" (la que acabamos de crear)
+Ahora verás un editor de gráficos. Vamos a crear un gráfico simple de alertas:
+
+En la parte de abajo (Query):
+
+Debería estar en modo "Table" o "Time series"
+En el campo de búsqueda (A) donde dice "Metrics", déjalo como está o pon:
+
+Metric: Count
+Group by: Date Histogram en @timestamp
+
+
+
+
+En la parte derecha, en "Panel options":
+
+Title: Alertas de Suricata
+
+
+Haz clic en "Apply" o "Save" arriba a la derecha
+
+
+Ahora mismo el gráfico estará vacío porque todavía no hemos generado tráfico ni ataques.
+Guarda el dashboard:
+
+Haz clic en el icono  Save dashboard (arriba a la derecha)
+Name: Dashboard TFG
+Haz clic en "Save"
