@@ -345,3 +345,37 @@ Si sí, ahora necesitamos acceder a Grafana desde tu navegador. Abre tu navegado
 ```
 http://10.0.2.10:3000
 ```
+Una vez hagamos esto ya tendremos desplegado Grafana
+Login en Grafana
+En la página de login:
+
+Usuario: admin
+Contraseña: admin
+
+Conectar Elasticsearch con Grafana
+Una vez dentro de Grafana:
+Te pedirá que cambies la contraseña. Pon una nueva contraseña (puede ser simple como tfg2025 o la que quieras) y guárdala.
+
+PASO 12: Conectar Elasticsearch con Grafana
+Una vez dentro de Grafana:
+
+En el menú lateral izquierdo, busca el icono de engranaje ⚙️ o haz clic en "Connections" → "Data sources" (Fuentes de datos)
+Haz clic en "Add data source" o "Add new data source"
+Busca y selecciona "Elasticsearch"
+Configúralo así:
+
+Name: Suricata
+URL: https://localhost:9200
+Auth: Marca ✅ "Basic auth" y ✅ "Skip TLS Verify" (o "With CA Cert" si no aparece Skip TLS)
+Basic Auth Details:
+
+User: elastic
+Password: (tu contraseña de Elasticsearch que guardaste)
+
+
+Index name: filebeat-*
+Time field name: @timestamp
+Version: Selecciona la versión 8.x o la más reciente
+
+
+Baja hasta abajo y haz clic en "Save & test"
