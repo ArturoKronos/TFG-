@@ -23,7 +23,7 @@ Necesita 2GB RAM, 1 CPU, 20GB disco
 ## Procedimientos 
 Primero de tod debemos crear una red nat donde estaran todas las maquinas que usaremos para este procedimiento, nosotro la llamaremos RedTFG. Una vez creada dicha Red, la pondremos en la configuracion de cada una de las maquinas. 
 
-## Configuración primera maquina 
+## Configuración primera maquina server
 Escribe:
 ```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
@@ -417,3 +417,80 @@ El gráfico aparecerá vacío por ahora, ya que todavía no se ha generado tráf
 1. Haz clic en **Save dashboard** en la esquina superior derecha.
 2. **Name:** Dashboard TFG  
 3. Haz clic en **Save**.
+
+## Configuración segunda maquina victima
+Configurar IP Fija en la Víctima
+Primero vamos a ponerle la IP 10.0.2.20 como planeamos.
+Verifica el nombre de la interfaz:
+```bash
+ip a
+```
+Ahora edita la configuración de red:
+```bash
+sudo nano /etc/netplan/01-network-manager-all.yaml
+
+```
+Borra todo y pon esto:
+```bash
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses:
+        - 10.0.2.20/24
+      routes:
+        - to: default
+          via: 10.0.2.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 8.8.4.4
+```
+Guardar:
+
+Ctrl + O → Enter
+Ctrl + X
+
+Aplica:
+```bash
+sudo netplan apply
+```
+Verifica la IP:
+```bash
+ip a
+```
+El servicio de red da un pequeño fallo. Vamos a arreglarlo:
+```bash
+sudo systemctl enable systemd-networkd
+```
+```bash
+sudo systemctl start systemd-networkd
+```
+Ahora vuelve a aplicar:
+```bash
+sudo netplan apply
+```
+Verifica la IP:
+```bash
+ip a
+```
+Una vez hecho esto debemos actualizar el sistema para poder instalar un par de paquetes necesario:
+```bash
+sudo apt update
+```
+```bash
+sudo apt upgrade -y
+```
+Cuando termine el upgrade, vamos a instalar servicios que puedan ser atacados:
+```bash
+sudo apt install apache2 -y
+```
+```bash
+sudo apt install ssh -y
+```
+ SSH está funcionando (running es lo importante). pero sale "disabled" eso solo significa que no arranca automáticamente al inicio, pero no es problema. Vamos a habilitarlo:
+ ```bash
+sudo systemctl enable ssh
+```
