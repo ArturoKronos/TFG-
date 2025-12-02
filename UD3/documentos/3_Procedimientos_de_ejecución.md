@@ -308,3 +308,40 @@ sudo systemctl status filebeat
 ```
  Instalar Grafana
 Añade el repositorio de Grafana:
+```bash
+sudo apt-get install -y apt-transport-https software-properties-common wget
+```
+```bash
+sudo mkdir -p /etc/apt/keyrings/
+```
+```bash
+wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+```
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+```
+Actualiza e instala:
+```bash
+sudo apt update
+```
+```bash
+sudo apt install grafana -y
+```
+Inicia Grafana:
+```bash
+sudo systemctl enable grafana-server
+```
+```bash
+sudo systemctl start grafana-server
+```
+Verifica que está corriendo:
+```bash
+sudo systemctl status grafana-server
+```
+
+**¿Ves "active (running)" en verde?**
+
+Si sí, ahora necesitamos acceder a Grafana desde tu navegador. Abre tu navegador web (en tu ordenador real, no en la VM) y ve a:
+```
+http://10.0.2.10:3000
+```
