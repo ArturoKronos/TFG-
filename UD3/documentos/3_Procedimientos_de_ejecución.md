@@ -345,70 +345,75 @@ Si sí, ahora necesitamos acceder a Grafana desde tu navegador. Abre tu navegado
 ```
 http://10.0.2.10:3000
 ```
-Una vez hagamos esto ya tendremos desplegado Grafana
-Login en Grafana
-En la página de login:
+# Despliegue y Configuración de Grafana
 
-Usuario: admin
-Contraseña: admin
+## Acceso a Grafana
 
-Conectar Elasticsearch con Grafana
-Una vez dentro de Grafana:
-Te pedirá que cambies la contraseña. Pon una nueva contraseña (puede ser simple como tfg2025 o la que quieras) y guárdala.
+Una vez desplegado Grafana, accede a la página de inicio de sesión:
 
-PASO 12: Conectar Elasticsearch con Grafana
-Una vez dentro de Grafana:
+- **Usuario:** admin  
+- **Contraseña:** admin  
 
-En el menú lateral izquierdo, busca el icono de engranaje  o haz clic en "Connections" → "Data sources" (Fuentes de datos)
-Haz clic en "Add data source" o "Add new data source"
-Busca y selecciona "Elasticsearch"
-Configúralo así:
+Al iniciar sesión, Grafana solicitará cambiar la contraseña. Introduce una nueva (por ejemplo, `tfg2025`) y guárdala.
 
-Name: Suricata
-URL: https://localhost:9200
-Auth: Marca "Basic auth" y  "Skip TLS Verify" (o "With CA Cert" si no aparece Skip TLS)
-Basic Auth Details:
+---
 
-User: elastic
-Password: (tu contraseña de Elasticsearch que guardaste)
+## Paso 12: Conectar Elasticsearch con Grafana
 
+Ya dentro de Grafana:
 
-Index name: filebeat-*
-Time field name: @timestamp
-Version: Selecciona la versión 8.x o la más reciente
+1. En el menú lateral izquierdo, selecciona **Connections → Data sources**.
+2. Haz clic en **Add data source**.
+3. Busca y selecciona **Elasticsearch**.
+4. Configura la fuente de datos de la siguiente manera:
 
+### Configuración de Elasticsearch
 
-Baja hasta abajo y haz clic en "Save & test"
-Crear un Dashboard en Grafana
-Ahora vamos a crear un dashboard básico para visualizar los ataques detectados por Suricata.
+- **Name:** Suricata  
+- **URL:** https://localhost:9200  
+- **Auth:**  
+  - Activar **Basic auth**  
+  - Activar **Skip TLS Verify**  
+- **Basic Auth Details:**  
+  - **User:** elastic  
+  - **Password:** (contraseña de Elasticsearch que guardaste)
 
-En el menú lateral izquierdo de Grafana, haz clic en el icono "+" o busca "Dashboards"
-Haz clic en "Create Dashboard" → "Add visualization"
-Selecciona la fuente de datos "Suricata" (la que acabamos de crear)
-Ahora verás un editor de gráficos. Vamos a crear un gráfico simple de alertas:
+### Índices
 
-En la parte de abajo (Query):
+- **Index name:** `filebeat-*`  
+- **Time field name:** `@timestamp`  
+- **Version:** Selecciona la versión **8.x** o la más reciente.
 
-Debería estar en modo "Table" o "Time series"
-En el campo de búsqueda (A) donde dice "Metrics", déjalo como está o pon:
+Finalmente, desplázate al final de la página y haz clic en **Save & test**.
 
-Metric: Count
-Group by: Date Histogram en @timestamp
+---
 
+## Crear un Dashboard en Grafana
 
+Ahora crearemos un dashboard básico para visualizar las alertas detectadas por Suricata.
 
+1. En el menú lateral izquierdo, selecciona **Dashboards** o el icono **+**.
+2. Haz clic en **Create Dashboard → Add visualization**.
+3. Selecciona la fuente de datos **Suricata**.
+4. En el editor de visualización, en la sección **Query**:
 
-En la parte derecha, en "Panel options":
+   - Asegúrate de estar en modo **Table** o **Time series**.  
+   - En los campos de configuración:
+     - **Metric:** Count  
+     - **Group by:** Date Histogram en `@timestamp`
 
-Title: Alertas de Suricata
+5. En el panel derecho, dentro de **Panel options**:
 
+   - **Title:** Alertas de Suricata
 
-Haz clic en "Apply" o "Save" arriba a la derecha
+6. Haz clic en **Apply** o **Save** en la esquina superior derecha.
 
+El gráfico aparecerá vacío por ahora, ya que todavía no se ha generado tráfico ni alertas.
 
-Ahora mismo el gráfico estará vacío porque todavía no hemos generado tráfico ni ataques.
-Guarda el dashboard:
+---
 
-Haz clic en el icono  Save dashboard (arriba a la derecha)
-Name: Dashboard TFG
-Haz clic en "Save"
+## Guardar el Dashboard
+
+1. Haz clic en **Save dashboard** en la esquina superior derecha.
+2. **Name:** Dashboard TFG  
+3. Haz clic en **Save**.
