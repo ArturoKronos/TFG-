@@ -494,3 +494,70 @@ sudo apt install ssh -y
  ```bash
 sudo systemctl enable ssh
 ```
+Crear Máquina Atacante
+Esta será la más simple de todas. 
+Configurar IP Fija en el Atacante
+Le vamos a poner la IP 10.0.2.30.
+Verifica la interfaz:
+ ```bash
+ip a
+```
+Debería ser enp0s3.
+Edita la configuración de red:
+ ```bash
+sudo nano /etc/netplan/01-network-manager-all.yaml
+```
+Borra todo y pon:
+ ```bash
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses:
+        - 10.0.2.30/24
+      routes:
+        - to: default
+          via: 10.0.2.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 8.8.4.4
+```
+Habilita e inicia el servicio de red:
+ ```bash
+sudo systemctl enable systemd-networkd
+```
+ ```bash
+sudo systemctl start systemd-networkd
+```
+Aplica:
+ ```bash
+sudo netplan apply
+```
+Verifica:
+ ```bash
+ip a
+```
+Actualizar el Sistema
+ ```bash
+sudo apt update
+```
+ ```bash
+sudo apt upgrade -y
+```
+Instalar Herramientas de Ataque
+Cuando termine el upgrade, instalaremos las herramientas para simular ataques:
+1. Nmap (escaneo de puertos):
+ ```bash
+sudo apt install nmap -y
+```
+2. Hydra (ataques de fuerza bruta):
+ ```bash
+sudo apt install hydra -y
+```
+3. Hping3 (para DDoS simulado):
+ ```bash
+sudo apt install hping3 -y
+```
