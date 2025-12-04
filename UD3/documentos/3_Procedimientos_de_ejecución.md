@@ -738,7 +738,48 @@ Haz clic en "Generar"
 Te dará una contraseña de 16 caracteres. Cópiala
 
 Configurar SMTP en Grafana
-En la máquina SEGURIDAD:
+En la máquina Server:
 ```
 sudo nano /etc/grafana/grafana.ini
 ```
+Presiona Ctrl + W y busca: smtp
+Encontrarás una sección [smtp]. Modifícala para que quede así (quita los ; al inicio):
+```
+[smtp]
+enabled = true
+host = smtp.gmail.com:587
+user = tu_email@gmail.com
+password = tu_contraseña_de_16_caracteres_aqui
+skip_verify = true
+from_address = tu_email@gmail.com
+from_name = Grafana Alertas TFG
+```
+IMPORTANTE:
+
+Reemplaza tu_email@gmail.com con tu email real
+Reemplaza tu_contraseña_de_16_caracteres_aqui con la contraseña que generaste (sin espacios)
+PASO 3: Reiniciar Grafana
+```
+sudo systemctl restart grafana-server
+```
+Verifica que está corriendo:
+```
+sudo systemctl status grafana-server
+```
+bashsudo systemctl status grafana-server
+Debería estar en verde "active (running)". Presiona q para salir.
+PASO 4: Crear Contact Point de Email
+En Grafana (tu navegador):
+
+Menú lateral → "Alerting" (icono de campana 🔔)
+"Contact points"
+"Add contact point"
+Configura:
+
+Name: Email
+Integration: Selecciona "Email"
+Addresses: tu_email@gmail.com (donde quieres recibir las alertas)
+
+
+Haz clic en "Test" (abajo)
+Debería decir "Test alert sent" y deberías recibir un email de prueba en 1-2 minutos
