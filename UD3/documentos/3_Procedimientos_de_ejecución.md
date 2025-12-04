@@ -717,3 +717,28 @@ Metric: Count (sin group by)
 Visualización: "Stat"
 Title: "Total de Alertas"
 Apply
+ Obtener Contraseña de Aplicación de Gmail
+
+Ve a https://myaccount.google.com/
+En el menú izquierdo: "Seguridad"
+Busca "Verificación en dos pasos"
+
+Si NO está activada, actívala primero (es obligatorio para contraseñas de aplicación)
+
+
+Una vez activada la verificación en dos pasos, busca "Contraseñas de aplicaciones"
+Selecciona:
+
+App: Correo
+Dispositivo: Otro (dispositivo personalizado)
+Nombre: Grafana
+
+
+Haz clic en "Generar"
+Te dará una contraseña de 16 caracteres. Cópiala
+
+Configurar SMTP en Grafana
+En la máquina SEGURIDAD:
+```
+sudo nano /etc/grafana/grafana.ini
+```
