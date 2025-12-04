@@ -646,96 +646,98 @@ Ahora desde tu navegador en tu anfitrion:
 ```
 http://127.0.0.1:3000
 ```
-PASO 1: Verificar que Grafana ve los datos de Elasticsearch
+## Guía para Crear Dashboard de Suricata en Grafana  
 
-En Grafana, ve al menú lateral izquierdo
-Haz clic en "Connections" o el icono de engranaje 
-Selecciona "Data sources"
-Deberías ver tu fuente de datos "Suricata" que creaste antes
-Haz clic en ella para verificar que sigue funcionando
-Baja hasta abajo y haz clic en "Save & test"
-Debería decir "Data source is working" en verde.
-PASO 2: Crear el Dashboard
+## PASO 1: Verificar que Grafana Detecta los Datos de Elasticsearch
 
-Menú lateral → "Dashboards"
-"New" → "New Dashboard"
-"Add visualization"
+1. En Grafana, abre el menú lateral izquierdo.  
+2. Haz clic en **“Connections”** o en el **icono de engranaje**.  
+3. Selecciona **“Data sources”**.  
+4. Localiza la fuente de datos **“Suricata”** creada previamente.  
+5. Entra en ella y verifica que sigue activa.  
+6. Desplázate hacia abajo y haz clic en **“Save & test”**.  
+7. Debes ver el mensaje **“Data source is working”** en verde.
 
-Panel 1: Timeline de Alertas (gráfico de tiempo)
+---
 
-Selecciona "Suricata"
-En la parte de abajo en "Query":
+## PASO 2: Crear el Dashboard
 
-Cambia de "Builder" a "Code" (arriba del query)
-O configura:
+### 1. Crear un nuevo Dashboard
+- Menú lateral → **Dashboards**  
+- **New** → **New Dashboard**  
+- **Add visualization**
 
-Metric: Count
-Group by: Date Histogram → Field: @timestamp
+---
 
+## Panel 1: Timeline de Alertas (Gráfico de Tiempo)
 
+1. Selecciona la fuente de datos **Suricata**.  
+2. En la sección **Query**:
+   - Cambia de **“Builder”** a **“Code”**  
+   - O configura manualmente:
+     - **Metric:** Count  
+     - **Group by:** Date Histogram  
+     - **Field:** `@timestamp`
+3. En la esquina superior derecha selecciona **“Time series”** como visualización.  
+4. En el panel derecho:
+   - **Title:** *Alertas Detectadas en el Tiempo*
+5. Haz clic en **Apply**.
 
+---
 
-Arriba a la derecha, cambia la visualización a "Time series"
-En el panel derecho:
+## Panel 2: Tipos de Ataques
 
-Title: "Alertas Detectadas en el Tiempo"
+1. Add → **Visualization** → Suricata  
+2. Query:
+   - **Metric:** Count  
+   - **Group by:** Terms  
+   - **Field:** `alert.signature.keyword`  
+   - **Size:** 10  
+3. Visualización: **Bar chart**  
+4. **Title:** *Tipos de Ataques*  
+5. **Apply**
 
+---
 
-Apply (arriba a la derecha)
+## Panel 3: IPs Atacantes
 
-Panel 2: Tipos de Ataques
+1. Add → **Visualization** → Suricata  
+2. Query:
+   - **Metric:** Count  
+   - **Group by:** Terms  
+   - **Field:** `src_ip.keyword`  
+   - **Size:** 10  
+3. Visualización: **Table**  
+4. **Title:** *Top IPs Atacantes*  
+5. **Apply**
 
-Add → Visualization → Suricata
-Query:
+---
 
-Metric: Count
-Group by: Terms → Field: alert.signature.keyword → Size: 10
+## Panel 4: Total de Alertas
 
-Visualización: "Bar chart"
-Title: "Tipos de Ataques"
-Apply
+1. Add → **Visualization** → Suricata  
+2. Query:
+   - **Metric:** Count  
+   - *(sin Group by)*  
+3. Visualización: **Stat**  
+4. **Title:** *Total de Alertas*  
+5. **Apply**
 
-Panel 3: IPs Atacantes
+---
 
-Add → Visualization → Suricata
-Query:
+# Obtener Contraseña de Aplicación de Gmail
 
-Metric: Count
-Group by: Terms → Field: src_ip.keyword → Size: 10
-
-Visualización: "Table"
-Title: "Top IPs Atacantes"
-Apply
-
-Panel 4: Total de Alertas
-
-Add → Visualization → Suricata
-Query:
-
-Metric: Count (sin group by)
-
-Visualización: "Stat"
-Title: "Total de Alertas"
-Apply
- Obtener Contraseña de Aplicación de Gmail
-
-Ve a https://myaccount.google.com/
-En el menú izquierdo: "Seguridad"
-Busca "Verificación en dos pasos"
-
-Si NO está activada, actívala primero (es obligatorio para contraseñas de aplicación)
-
-
-Una vez activada la verificación en dos pasos, busca "Contraseñas de aplicaciones"
-Selecciona:
-
-App: Correo
-Dispositivo: Otro (dispositivo personalizado)
-Nombre: Grafana
-
-
-Haz clic en "Generar"
-Te dará una contraseña de 16 caracteres. Cópiala
+1. Ve a **https://myaccount.google.com/**  
+2. Menú izquierdo → **Seguridad**  
+3. Busca **“Verificación en dos pasos”**  
+4. Si **no** está activada, actívala (es obligatorio para generar contraseñas de aplicación).  
+5. Una vez activada, baja a **“Contraseñas de aplicaciones”**.  
+6. Selecciona:
+   - **App:** Correo  
+   - **Dispositivo:** Otro (dispositivo personalizado)  
+   - **Nombre:** Grafana  
+7. Haz clic en **“Generar”**.  
+8. Se mostrará una contraseña de **16 caracteres**. Cópiala.
 
 Configurar SMTP en Grafana
 En la máquina Server:
