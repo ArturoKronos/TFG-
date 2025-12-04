@@ -561,3 +561,36 @@ sudo apt install hydra -y
  ```bash
 sudo apt install hping3 -y
 ```
+ Verificar Conectividad entre las Máquinas
+Antes de hacer ataques, vamos a asegurarnos de que las 3 máquinas pueden verse entre ellas.
+En la máquina Atacante, prueba conectividad. Para esto se necesitara tener encendida las tres maquinas a la vez:
+ ```bash
+ping -c 4 10.0.2.10
+```
+ ```bash
+ping -c 4 10.0.2.20
+```
+PRUEBAS DE ATAQUE Y VERIFICACIÓN
+Preparar Suricata para capturar ataques
+En la máquina Servidor
+Primero verifica que Suricata está corriendo:
+ ```bash
+sudo systemctl status suricata
+```
+ Escaneo de puertos con Nmap
+En la máquina Atacante
+Vamos a escanear los puertos de la víctima:
+ ```bash
+nmap -sS -p 1-1000 10.0.2.20
+```
+Para ver las alertas en la maquina de Servidor tendremos que ver el archivo principal de logs de Suricata, que es eve.json:
+ ```bash
+sudo tail -f /var/log/suricata/eve.json
+```
+Este archivo tiene MUCHO más detalle. Verás líneas JSON largas pero para ser msa concreto usariamos el siguiente:
+ ```bash
+sudo tail -f /var/log/suricata/eve.json | grep --line-buffered '"event_type":"alert"'
+```
+Fuerza bruta SSH con Hydra
+En la máquina ATACANTE:
+Primero crea un archivo con usuarios comunes:
