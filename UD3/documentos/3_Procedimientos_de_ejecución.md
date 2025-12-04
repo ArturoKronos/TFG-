@@ -642,3 +642,78 @@ Cuando arranque, verifica que tiene las dos interfaces:
  ```bash
 ip a
 ```
+Ahora desde tu navegador en tu anfitrion:
+```
+http://127.0.0.1:3000
+```
+PASO 1: Verificar que Grafana ve los datos de Elasticsearch
+
+En Grafana, ve al menú lateral izquierdo
+Haz clic en "Connections" o el icono de engranaje 
+Selecciona "Data sources"
+Deberías ver tu fuente de datos "Suricata" que creaste antes
+Haz clic en ella para verificar que sigue funcionando
+Baja hasta abajo y haz clic en "Save & test"
+Debería decir "Data source is working" en verde.
+PASO 2: Crear el Dashboard
+
+Menú lateral → "Dashboards"
+"New" → "New Dashboard"
+"Add visualization"
+
+Panel 1: Timeline de Alertas (gráfico de tiempo)
+
+Selecciona "Suricata"
+En la parte de abajo en "Query":
+
+Cambia de "Builder" a "Code" (arriba del query)
+O configura:
+
+Metric: Count
+Group by: Date Histogram → Field: @timestamp
+
+
+
+
+Arriba a la derecha, cambia la visualización a "Time series"
+En el panel derecho:
+
+Title: "Alertas Detectadas en el Tiempo"
+
+
+Apply (arriba a la derecha)
+
+Panel 2: Tipos de Ataques
+
+Add → Visualization → Suricata
+Query:
+
+Metric: Count
+Group by: Terms → Field: alert.signature.keyword → Size: 10
+
+Visualización: "Bar chart"
+Title: "Tipos de Ataques"
+Apply
+
+Panel 3: IPs Atacantes
+
+Add → Visualization → Suricata
+Query:
+
+Metric: Count
+Group by: Terms → Field: src_ip.keyword → Size: 10
+
+Visualización: "Table"
+Title: "Top IPs Atacantes"
+Apply
+
+Panel 4: Total de Alertas
+
+Add → Visualization → Suricata
+Query:
+
+Metric: Count (sin group by)
+
+Visualización: "Stat"
+Title: "Total de Alertas"
+Apply
