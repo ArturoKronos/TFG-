@@ -594,3 +594,51 @@ sudo tail -f /var/log/suricata/eve.json | grep --line-buffered '"event_type":"al
 Fuerza bruta SSH con Hydra
 En la máquina ATACANTE:
 Primero crea un archivo con usuarios comunes:
+ ```bash
+echo -e "root\nadmin\nubuntu\ntfg" > usuarios.txt
+```
+Crea un archivo con contraseñas comunes:
+ ```bash
+echo -e "123456\npassword\nadmin\ntfg2025" > passwords.txt
+```
+Ahora lanza el ataque de fuerza bruta contra SSH:
+ ```bash
+hydra -L usuarios.txt -P passwords.txt ssh://10.0.2.20
+```
+Mientras hydra corre, ve a la máquina Servidor y deja corriendo:
+ ```bash
+sudo tail -f /var/log/suricata/eve.json | grep --line-buffered '"event_type":"alert"'
+```
+Continúa con el siguiente ataque: DDoS simulado
+En la máquina Atacante, ejecuta:
+ ```bash
+sudo hping3 -S -p 80 --flood 10.0.2.20
+```
+## PASO FINAL: Configurar Dashboards en Grafana
+Pero para ello neesitaremos hacer lo siguiente:
+ Añadir un Adaptador 2 en modo NAT (solo para acceso externo)
+Vamos a hacer lo que sugeriste antes, pero bien:
+
+En VirtualBox, selecciona la máquina "Seguridad" (apagada)
+Configuración → Red
+Ve a la pestaña "Adaptador 2"
+ Marca "Habilitar adaptador de red"
+Conectado a: Selecciona NAT (no Red NAT, solo NAT)
+Despliega "Avanzadas"
+Haz clic en "Reenvío de puertos"
+Añade esta regla (clic en el + verde):
+
+Nombre: Grafana
+Protocolo: TCP
+IP anfitrión: 127.0.0.1
+Puerto anfitrión: 3000
+IP invitado: (déjalo vacío)
+Puerto invitado: 3000
+
+Aceptar → Aceptar
+
+Arranca la máquina Seguridad.
+Cuando arranque, verifica que tiene las dos interfaces:
+ ```bash
+ip a
+```
