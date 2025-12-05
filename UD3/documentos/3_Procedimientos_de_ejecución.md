@@ -840,4 +840,32 @@ Haz clic fuera o presiona Enter para crear el grupo
 
  Configure notificationsContact point: Ya está seleccionado "Email"
  Configure notification message
-Aquí personalizas el mensaje que recibirás por email:
+ 
+## Corregir la configuración de Filebeat
+He detectado un pequeñpo fallo al hacer unos testeos asi que debes ahcer esto:
+En la máquina SEGURIDAD:
+Edita la configuración de Filebeat:
+```
+sudo nano /etc/filebeat/filebeat.yml
+```
+Busca la sección output.elasticsearch
+Busca la sección output.elasticsearch
+```
+output.elasticsearch:
+  hosts: ["https://localhost:9200"]
+  username: "elastic"
+  password: "TU_CONTRASEÑA"
+  ssl.verification_mode: none
+```
+Reinicia Filebeat:
+```
+sudo systemctl restart filebeat
+```
+Espera 10 segundos y prueba de nuevo:
+```
+sudo filebeat test output
+```
+Una vez que funcione el test, espera 1-2 minutos y verifica que hay datos en Elasticsearch:
+```
+curl -k -u elastic:TU_CONTRASEÑA -X GET "https://localhost:9200/filebeat-*/_count?pretty"
+```
