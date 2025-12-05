@@ -773,7 +773,7 @@ Debería estar en verde "active (running)". Presiona q para salir.
 PASO 4: Crear Contact Point de Email
 En Grafana (tu navegador):
 
-Menú lateral → "Alerting" (icono de campana 🔔)
+Menú lateral → "Alerting" (icono de campana )
 "Contact points"
 "Add contact point"
 Configura:
@@ -785,3 +785,59 @@ Addresses: tu_email@gmail.com (donde quieres recibir las alertas)
 
 Haz clic en "Test" (abajo)
 Debería decir "Test alert sent" y deberías recibir un email de prueba en 1-2 minutos
+PASO 5: Crear Regla de Alerta
+Ahora vamos a crear la regla que enviará emails cuando detecte ataques.
+En Grafana:
+
+Sigue en "Alerting" → Haz clic en "Alert rules" (en el menú de Alerting)
+"New alert rule" (botón azul arriba a la derecha)
+Configura cada sección:
+
+
+SECTION 1 - Set a query and alert condition:
+
+Rule name: Ataques Detectados en la Red
+Select data source: Suricata
+Query A:
+
+Lucene query: *
+Metric: Count
+Group by: Date Histogram → Field: @timestamp → Interval: 1m
+
+
+Justo debajo verás "+ Expression", haz clic
+Expression B (se añade automáticamente):
+
+Operation: Reduce
+Function: Last
+Input: A
+Mode: Strict
+
+
+Haz clic de nuevo en "+ Expression"
+Expression C:
+
+Operation: Threshold
+Input: B
+IS ABOVE: 5 (alertará si hay más de 5 eventos por minuto)
+
+
+En la parte de arriba, selecciona C como la condición de alerta (Alert condition)
+Add folder and labels
+
+En "Folder", haz clic en "Select folder" (el desplegable)
+Selecciona "+ New folder"
+Escribe el nombre: Alertas TFG
+Haz clic en "Create" o presiona Enter
+Ahora ese folder debería aparecer seleccionado
+Evaluation group
+
+Donde dice "Select an evaluation group...", haz clic en el desplegable
+Selecciona "+ New evaluation group"
+Te pedirá un nombre, escribe: Deteccion Continua
+Evaluation interval: Déjalo en 1m (1 minuto - significa que revisará cada minuto)
+Haz clic fuera o presiona Enter para crear el grupo
+
+ Configure notificationsContact point: Ya está seleccionado "Email"
+ Configure notification message
+Aquí personalizas el mensaje que recibirás por email:
