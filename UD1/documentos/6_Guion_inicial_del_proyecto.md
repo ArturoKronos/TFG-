@@ -1,59 +1,77 @@
 # *Objetivo del proyecto*
 ---
-## Cumplimiento normativo
-
-### Reglamento General de Protección de Datos (RGPD)
-
-#### Artículo 32 – Seguridad del tratamiento
-> “El responsable y el encargado del tratamiento aplicarán medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo.”
-
-Cocacusca almacena datos personales de clientes (nombres, direcciones, correos electrónicos y datos de pago). La implantación de un sistema IDS constituye una medida técnica adecuada para cumplir este requisito.
+# Implementación de un Sistema de Detección de Intrusos Open Source
+## Protección de la infraestructura web de Cocacusca Antigüedades
 
 ---
 
-#### Artículo 33 – Notificación de violaciones de seguridad
-> “En caso de violación de la seguridad de los datos personales, el responsable notificará en un plazo de 72 horas.”
+## Objetivos generales
 
-El sistema propuesto permite:
-- Detectar brechas de seguridad en tiempo real  
-- Registrar fecha, hora y tipo de incidente  
-- Generar evidencia para notificación ante autoridades  
-
----
-
-#### Artículo 34 – Comunicación a los interesados
-> “Cuando sea probable que la violación suponga un alto riesgo para los derechos y libertades, se comunicará al interesado.”
-
-El IDS proporciona:
-- Alertas automáticas para respuesta inmediata  
-- Registro de potenciales afectados  
-- Documentación precisa del incidente  
+- Proporcionar visibilidad completa del tráfico de red de Cocacusca
+- Detectar intentos de intrusión en tiempo real
+- Alertar automáticamente al equipo técnico ante amenazas
+- Cumplir con obligaciones legales de seguridad (RGPD, LSSI)
+- Minimizar costes utilizando exclusivamente software open source
 
 ---
 
-## Ley de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE)
+## Objetivos específicos
 
-### Artículo 12 – Deber de seguridad
-Los prestadores de servicios están obligados a implementar las medidas técnicas necesarias para garantizar la seguridad de los datos y los servicios digitales.
-
----
-
-## Esquema Nacional de Seguridad (ENS)
-
-Aunque no resulta obligatorio para empresas privadas, establece buenas prácticas aplicables en materia de seguridad TIC, entre ellas:
-
-- op.mon.1: Sistema de monitorización  
-- op.mon.2: Sistema de detección de intrusiones  
-- op.exp.8: Registro de actividad  
+- Implementar **Suricata** como IDS para inspección profunda de paquetes
+- Configurar **Elasticsearch** para almacenamiento centralizado de eventos de seguridad
+- Desarrollar dashboards en **Grafana** para visualización de amenazas
+- Establecer sistema de alertas por **email** ante incidentes críticos
+- Utilizar **Nmap** para auditorías periódicas de seguridad
+- Documentar procedimientos de respuesta ante incidentes
+- Formar al personal en interpretación de alertas
 
 ---
 
-## Normativa PCI DSS (Payment Card Industry Data Security Standard)
+## Alcance del proyecto
 
-Dado que Cocacusca procesa pagos mediante tarjeta, son aplicables los siguientes requisitos del estándar PCI DSS:
+### Incluido
 
-- Req. 10: Rastrear y monitorizar todos los accesos a recursos de red  
-- Req. 11.4: Uso de sistemas de detección o prevención de intrusiones  
+- Instalación y configuración de Suricata, Elasticsearch, Grafana
+- Configuración de reglas de detección **Emerging Threats**
+- Dashboards personalizados para Cocacusca
+- Sistema de alertas por email
+- Scripts de auditoría automática con Nmap
+- Documentación técnica completa
+- Manual de usuario
+- Formación básica al administrador
+
+### No incluido
+
+- Prevención activa de intrusiones (IPS)
+- Firewall de aplicación web (WAF)
+- Análisis de malware
+- Respuesta automatizada a incidentes
+- Monitorización 24/7 por terceros
+
+---
+
+## Metodología
+
+Se utilizará una metodología **ágil** con sprints semanales:
+
+- **Sprint 1 (Semana 1-2):** Análisis y diseño  
+- **Sprint 2 (Semana 3-4):** Instalación infraestructura base  
+- **Sprint 3 (Semana 5-6):** Configuración Suricata y Elasticsearch  
+- **Sprint 4 (Semana 7-8):** Desarrollo dashboards Grafana  
+- **Sprint 5 (Semana 9-10):** Sistema de alertas y pruebas  
+- **Sprint 6 (Semana 11-12):** Documentación y formación  
+
+---
+
+## Entregables
+
+- Sistema IDS funcional y operativo
+- Documentación técnica completa
+- Manual de usuario
+- Scripts de mantenimiento y auditoría
+- Procedimientos de respuesta a incidentes
+- Presentación ejecutiva para dirección
+
 
 
 
