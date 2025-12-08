@@ -1,14 +1,58 @@
 # *Oportunidades y viabilidad del proyecto*
 
-La implantación de un **sistema de detección y monitorización de intrusiones** en **Cocacusca** representa una oportunidad estratégica para mejorar la **seguridad** y la **gestión tecnológica** de la empresa. Actualmente, la compañía **no dispone de mecanismos avanzados** de control del tráfico ni de alertas ante posibles amenazas, por lo que este proyecto cubrirá una **necesidad real y prioritaria**.
+---
+## Oportunidades
 
-Entre las principales oportunidades se encuentran:
+### O1. Software Open Source maduro
+- Suricata: IDS de nivel empresarial, gratuito y con mantenimiento activo  
+- Elasticsearch: sistema de almacenamiento robusto utilizado por grandes compañías  
+- Grafana: herramienta de visualización profesional  
+- Comunidad activa con soporte gratuito  
 
-- **Refuerzo de la ciberseguridad:** detección temprana de accesos indebidos o actividades anómalas.
-- **Optimización de los recursos tecnológicos:** información detallada sobre los dispositivos y servicios activos.
-- **Cumplimiento de buenas prácticas:** protección de datos y continuidad del negocio.
-- **Reducción de costes:** uso de herramientas **open-source** como Nmap, Suricata y Grafana, sin necesidad de licencias comerciales.
+---
 
-En cuanto a la **viabilidad técnica y económica**, el proyecto es totalmente realizable, ya que las tecnologías seleccionadas pueden instalarse en los **servidores actuales** o en **entornos virtualizados** con un consumo moderado de recursos. Además, el uso de **software libre** permite minimizar los costes, limitando la inversión al **tiempo de configuración y documentación** del sistema.
+### O2. Hardware mínimo requerido
+- Capacidad de ejecución en hardware económico o reciclado  
+- Raspberry Pi 4 (aprox. 80 €) o miniPC usado (150 €)  
+- No requiere servidores de alto rendimiento  
 
-En conjunto, este proyecto es **viable, escalable y sostenible**, y permitirá a **Cocacusca** dar un paso importante hacia la **protección integral de su infraestructura tecnológica**.
+---
+
+### O3. Escalabilidad
+- El sistema puede crecer conforme lo haga la empresa  
+- Posibilidad de añadir nodos adicionales de monitorización  
+- Ampliación futura hacia detección avanzada de amenazas  
+
+---
+
+### O4. Conocimiento transferible
+- Formación interna al personal de Cocacusca  
+- Autonomía del equipo técnico  
+- Reducción de dependencia de proveedores externos  
+
+---
+
+## Viabilidad técnica
+- Hardware disponible: la empresa dispone de un ordenador antiguo (Intel i5, 8 GB RAM) que puede dedicarse al proyecto  
+- Conectividad suficiente mediante fibra de 600 Mbps  
+- El administrador web posee conocimientos básicos de Linux, suficientes para mantenimiento posterior  
+- Tiempo aproximado de implementación inicial: 2–3 días  
+
+---
+
+## Viabilidad económica
+
+| Concepto | Solución comercial | Solución propuesta |
+|---------|-------------------|-------------------|
+| Licencias software | 5.000–15.000 €/año | 0 € |
+| Hardware | Incluido | 0 € (reciclado) |
+| Instalación | 2.000–5.000 € | 0 € (TFG) |
+| Mantenimiento anual | 1.000–3.000 € | 0 € (personal interno) |
+| **TOTAL 3 años** | **24.000–69.000 €** | **0 €** |
+
+---
+
+## Retorno de la inversión (ROI)
+- Coste medio de un incidente de seguridad en el sector: 25.000 €  
+- Evitar un único incidente cubriría la inversión del proyecto  
+- Multas RGPD por filtración de datos: hasta 20 millones de euros o el 4 % de la facturación anual  
