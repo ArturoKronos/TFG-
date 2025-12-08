@@ -1,50 +1,59 @@
 # *Objetivo del proyecto*
+---
+## Cumplimiento normativo
 
-El **objetivo principal** es implantar en **Cocacusca S.L.** un **sistema de detección y monitorización de intrusiones** que permita:
+### Reglamento General de Protección de Datos (RGPD)
 
-- Analizar el **tráfico de red**  
-- Detectar **comportamientos sospechosos**  
-- Visualizar la información de forma **centralizada**  
+#### Artículo 32 – Seguridad del tratamiento
+> “El responsable y el encargado del tratamiento aplicarán medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo.”
 
-Para ello, se integrarán las herramientas:
-
-- **Nmap**  
-- **Suricata**  
-- **Grafana**  
-
-en una **infraestructura común**.
+Cocacusca almacena datos personales de clientes (nombres, direcciones, correos electrónicos y datos de pago). La implantación de un sistema IDS constituye una medida técnica adecuada para cumplir este requisito.
 
 ---
 
-## Beneficios de la implementación
+#### Artículo 33 – Notificación de violaciones de seguridad
+> “En caso de violación de la seguridad de los datos personales, el responsable notificará en un plazo de 72 horas.”
 
-La implementación de esta solución permitirá:
-
-- **Mejorar la seguridad** de la red interna  
-- **Prevenir posibles ataques**  
-- Obtener una **visión global** del estado de la infraestructura tecnológica  
-- Reducir **costes** mediante el uso de **herramientas open-source**, aportando una solución **profesional y adaptable** al tamaño de la empresa  
-
----
-
-## Alcance del proyecto
-
-El proyecto incluye:
-
-1. **Instalación y configuración de Suricata** como sistema IDS.  
-2. **Implementación de Nmap** para el descubrimiento de dispositivos y servicios.  
-3. **Integración de datos y métricas en Grafana** para su visualización.  
-4. **Documentación técnica** y procedimientos de instalación.  
+El sistema propuesto permite:
+- Detectar brechas de seguridad en tiempo real  
+- Registrar fecha, hora y tipo de incidente  
+- Generar evidencia para notificación ante autoridades  
 
 ---
 
-## Resultado esperado
+#### Artículo 34 – Comunicación a los interesados
+> “Cuando sea probable que la violación suponga un alto riesgo para los derechos y libertades, se comunicará al interesado.”
 
-Al finalizar el proyecto, **Cocacusca S.L.** contará con un **sistema funcional** capaz de:
+El IDS proporciona:
+- Alertas automáticas para respuesta inmediata  
+- Registro de potenciales afectados  
+- Documentación precisa del incidente  
 
-- Detectar **intrusiones**  
-- Generar **alertas**  
-- Ofrecer **paneles visuales de control**  
+---
 
-Esto permitirá **mejorar la capacidad de respuesta** ante incidentes y **fortalecer la seguridad informática** de la empresa.
+## Ley de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE)
+
+### Artículo 12 – Deber de seguridad
+Los prestadores de servicios están obligados a implementar las medidas técnicas necesarias para garantizar la seguridad de los datos y los servicios digitales.
+
+---
+
+## Esquema Nacional de Seguridad (ENS)
+
+Aunque no resulta obligatorio para empresas privadas, establece buenas prácticas aplicables en materia de seguridad TIC, entre ellas:
+
+- op.mon.1: Sistema de monitorización  
+- op.mon.2: Sistema de detección de intrusiones  
+- op.exp.8: Registro de actividad  
+
+---
+
+## Normativa PCI DSS (Payment Card Industry Data Security Standard)
+
+Dado que Cocacusca procesa pagos mediante tarjeta, son aplicables los siguientes requisitos del estándar PCI DSS:
+
+- Req. 10: Rastrear y monitorizar todos los accesos a recursos de red  
+- Req. 11.4: Uso de sistemas de detección o prevención de intrusiones  
+
+
 
