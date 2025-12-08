@@ -1,95 +1,118 @@
-## Diseño lógico y físico de la infraestructura
+## *Diseño lógico y físico de la infraestructura*
+---
+### Arquitectura del Sistema IDS - Cocacusca Antigüedades
 
 ---
 
-## **Módulo 1: Escaneo y análisis de red con Nmap**
+### Arquitectura lógica del sistema
 
-### Funcionalidades principales
-- Escaneo de puertos abiertos.  
-- Detección de servicios y versiones.  
-- Identificación de sistemas operativos.  
-- Detección de vulnerabilidades básicas mediante scripts **NSE**.  
-- Generación de logs relacionados con actividad sospechosa.  
-
-### Flujo de trabajo
-**Nmap** → envía resultados → **Servidor de procesamiento** (Elastic/Logstash o scripts propios) → **Base de datos / Grafana**
-
----
-
-## **Módulo 2: Detección de intrusiones con Suricata**
-
-### Funcionalidades principales
-- Inspección profunda de paquetes (**IDS/IPS**).  
-- Detección de patrones de ataque (DoS, escaneos, exploits conocidos).  
-- Reglas personalizadas para detectar escaneos Nmap o tráfico malicioso.  
-- Exportación de logs en formato **EVE JSON**.  
-
-### Flujo de trabajo
-**Suricata (modo IDS)** → genera logs EVE → **Servidor de logs** (o contenedor) → **Grafana**
-
----
-
-## **Módulo 3: Visualización y alertas con Grafana**
-
-### Dashboards
-- Eventos sospechosos detectados por Suricata.  
-- Escaneos realizados por Nmap.  
-- Mapas de puertos abiertos en la red.  
-- Series temporales de intentos de intrusión.  
-- Integración con **Loki**, **Elasticsearch** o **Prometheus**.
-
-### Sistema de alertas automáticas
-- Envío por correo electrónico.  
-- Envío por Telegram.  
-- Notificaciones instantáneas ante reglas críticas.  
+                INTERNET
+                   │
+                   ▼
+          ┌────────────────┐
+          │ Router Movistar│
+          │  (Gateway)     │
+          └────────┬───────┘
+                   │
+          ┌────────┴───────┐
+          │  Switch TP-Link│
+          │   (8 puertos)  │
+          └──┬─────┬───┬───┘
+             │     │   │
+     ┌───────┘     │   └──────────┐
+     │             │              │
+     ▼             ▼              ▼
+┌─────────┐  ┌──────────┐  ┌──────────┐
+│Servidor │  │ IDS/SIEM │  │ PCs      │
+│   Web   │  │ Sistema  │  │ Oficina  │
+│ Apache  │  │ Suricata │  │          │
+│WordPress│  │Elastics. │  │          │
+│ MySQL   │  │ Grafana  │  │          │
+└─────────┘  └──────────┘  └──────────┘
+192.168.1.100 192.168.1.50 192.168.1.x
 
 ---
 
-## **Base de datos / Sistema de logs**
+## Componentes del sistema IDS
 
-### Información almacenada
-- Resultados de escaneos **Nmap**.  
-- Logs **EVE** de Suricata.  
-- Métricas para consulta desde Grafana.  
+### 1. Suricata (Motor de detección)
+- **Función:** Inspección profunda de paquetes (DPI)  
+- **Modo:** IDS (detección, no bloqueo)  
+- **Interfaz:** Modo promiscuo en `enp0s3`  
+- **Reglas:** Emerging Threats Open (actualización diaria)  
+- **Logs:** `/var/log/suricata/eve.json` (formato JSON)  
 
-El acceso está restringido mediante red interna.
+### 2. Filebeat (Recolector de logs)
+- **Función:** Envío de logs Suricata a Elasticsearch  
+- **Modo:** Agente ligero  
+- **Frecuencia:** Tiempo real (streaming)  
+- **Formato salida:** JSON enriquecido  
+
+### 3. Elasticsearch (Motor de almacenamiento)
+- **Función:** Base de datos distribuida para eventos  
+- **Índices:** `filebeat-*` (rotación diaria)  
+- **Retención:** 90 días  
+- **Búsquedas:** Lucene query DSL  
+- **API:** RESTful sobre HTTPS  
+
+### 4. Grafana (Visualización)
+- **Función:** Dashboards interactivos  
+- **Paneles:** 4 principales (timeline, tipos, IPs, total)  
+- **Actualización:** 30 segundos  
+- **Acceso:** Web HTTPS puerto 3000  
+- **Alertas:** SMTP email + webhook opcionales  
+
+### 5. Nmap (Auditoría)
+- **Función:** Escaneo de vulnerabilidades programado  
+- **Frecuencia:** Semanal automatizado  
+- **Alcance:** Red interna completa  
+- **Reports:** Almacenados en `/var/log/auditorias/`  
+
+---
+
+## Flujo de datos
+
+Tráfico Red → Suricata (análisis) → eve.json
+↓
+Filebeat (recolección)
+↓
+Elasticsearch (almacenamiento)
+↓
+Grafana (visualización)
+↓
+Usuario / Alertas Email
+
 
 ---
 
-## **Flujo de Información y Conectividad**
+## Diseño físico - Diagrama de red
 
-### Direccionamiento IP
-
-| Servicio / Contenedor       | Dirección IP asignada            |
-|-----------------------------|----------------------------------|
-| Servidor principal          | 192.168.10.10 (estática)         |
-| Contenedor Suricata         | 172.20.0.2 (Docker)              |
-| Contenedor Nmap             | 172.20.0.3                       |
-| Base de datos               | 172.20.0.4                       |
-| Grafana                     | 172.20.0.5                       |
-| Red objetivo (clientes)     | 192.168.20.0/24 (DHCP)           |
-
----
-
-## **Comunicación entre servicios**
-
-- **Nmap → Backend:** puerto 5000/TCP (JSON).  
-- **Suricata → Servidor de logs:** puerto 9500/UDP (EVE JSON).  
-- **Grafana → Base de datos:**  
-  - 9200/HTTP (Elasticsearch)  
-  - 3100/TCP (Loki)  
-- **Grafana → Panel web:** puerto 3000/TCP.  
+                     ISP
+                      │
+                [Módem/Router]
+                 192.168.1.1
+                      │
+                [Switch GbE]
+                      │
+    ┌─────────────────┼─────────────────┐
+    │                 │                 │
+[Servidor Web] [IDS Server] [Workstations]
+192.168.1.100 192.168.1.50 192.168.1.10-20
+│ │
+│ [Puerto Span/
+│ Modo Promiscuo]
+│ │
+└─────────[Tráfico Copiado]────┘
 
 ---
 
-## **VLANs (opcional)**
+## Configuración de red
 
-| VLAN | Descripción |
-|------|-------------|
-| **VLAN 10** | Administración (Suricata, Grafana, Logs). |
-| **VLAN 20** | Red objetivo de escaneo. |
-| **VLAN 30** | Visualización y panel de control. |
+| Dispositivo          | IP             | Máscara    | Gateway      | DNS     |
+|---------------------|----------------|-----------|-------------|---------|
+| Servidor Web         | 192.168.1.100  | /24       | 192.168.1.1 | 8.8.8.8 |
+| IDS Server           | 192.168.1.50   | /24       | 192.168.1.1 | 8.8.8.8 |
+| Workstation Admin    | 192.168.1.10   | /24       | 192.168.1.1 | 8.8.8.8 |
 
----
 
 
