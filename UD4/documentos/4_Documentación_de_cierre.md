@@ -20,6 +20,6 @@ Todo problema que hemos ido viendo por el camino se ha solucionado de forma corr
 - En muchas ocasiones el error más tonto y más sencillo es el que no vemos. Por ello siempre ten en cuenta que las maquinas deben estar conectadas y con la configuración correcta:
 ![hping3](../img/config.png)
 
-- Tambien podemos llegar a tener fallos mas complejos como tener errores en la configuracion de un archivo y al comprobarlo haciendo un test nos enseñe el error:
+- Tambien podemos llegar a tener fallos más complejos como errores en la configuración de un archivo, al comprobarlo haciendo un test nos enseñara dicho error:
   
 ![hping3](../img/filebeat.png)
