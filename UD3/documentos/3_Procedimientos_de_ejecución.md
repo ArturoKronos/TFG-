@@ -869,3 +869,14 @@ Una vez que funcione el test, espera 1-2 minutos y verifica que hay datos en Ela
 ```
 curl -k -u elastic:TU_CONTRASEÑA -X GET "https://localhost:9200/filebeat-*/_count?pretty"
 ```
+Además tendremos que hacer un ultimo ajuste en el dashboard en el suricata:
+En el panel "Tipos de Ataques", cambia el Group By a:
+
+Type: Terms
+Field: event.dataset
+
+Edita el panel "IPs Atacantes"
+En "Group By" → Terms
+Field: source.ip
+
+Ahora ya estara too listo para registrar todo lo necesario.
