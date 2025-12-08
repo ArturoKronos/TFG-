@@ -18,4 +18,4 @@ Por eso lo enlazaremos con nuestro correo personal para que nos lleguen las aler
 Todo problema que hemos ido viendo por el camino se ha solucionado de forma correcta en el paso 3 de la UD3, pero aun asi debemos mecionar algunos que debemos tener en cuenta. 
 
 - En muchas ocasiones el error más tonto y más sencillo es el que no vemos. Por ello siempre ten en cuenta que las maquinas deben estar conectadas y con la configuración correcta:
-![hping3](../img/conf.png)
+![hping3](../img/config.png)
