@@ -1,46 +1,57 @@
 # *Cumplimiento legal y buenas prácticas en seguridad informática*
+---
+---
+## Cumplimiento normativo
 
-El **proyecto de seguridad informática** en **Cocacusca** debe desarrollarse cumpliendo con las **principales normativas legales** vigentes en materia de **protección de datos** y **seguridad de la información**.
+### Reglamento General de Protección de Datos (RGPD)
+
+#### Artículo 32 – Seguridad del tratamiento
+> “El responsable y el encargado del tratamiento aplicarán medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo.”
+
+Cocacusca almacena datos personales de clientes (nombres, direcciones, correos electrónicos y datos de pago). La implantación de un sistema IDS constituye una medida técnica adecuada para cumplir este requisito.
 
 ---
 
-## 1. Cumplimiento normativo
+#### Artículo 33 – Notificación de violaciones de seguridad
+> “En caso de violación de la seguridad de los datos personales, el responsable notificará en un plazo de 72 horas.”
 
-Se debe garantizar el cumplimiento de:
-
-- **Reglamento General de Protección de Datos (RGPD)**
-- **Ley Orgánica de Protección de Datos y Garantía de los Derechos Digitales (LOPDGDD)**
-
-> Esto implica aplicar **medidas técnicas y organizativas adecuadas** para prevenir:
-> - Accesos no autorizados  
-> - Pérdidas de información  
-> - Filtraciones de datos personales  
+El sistema propuesto permite:
+- Detectar brechas de seguridad en tiempo real  
+- Registrar fecha, hora y tipo de incidente  
+- Generar evidencia para notificación ante autoridades  
 
 ---
 
-## 2. Buenas prácticas y normas internacionales
+#### Artículo 34 – Comunicación a los interesados
+> “Cuando sea probable que la violación suponga un alto riesgo para los derechos y libertades, se comunicará al interesado.”
 
-Se recomienda seguir las directrices de:
-
-- **INCIBE (Instituto Nacional de Ciberseguridad)**  
-- Normas internacionales como **ISO/IEC 27001**, enfocadas en la **gestión de la seguridad de la información**  
-
----
-
-## 3. Requisitos del sistema de detección y monitorización
-
-El sistema deberá:
-
-1. **Proteger los datos personales** que puedan aparecer en los registros o logs.  
-2. **Restringir el acceso** únicamente al personal autorizado.  
-3. **Utilizar mecanismos de cifrado** en la transmisión de datos.  
-4. **Definir una política de retención de logs** que garantice **privacidad** y **trazabilidad**.  
+El IDS proporciona:
+- Alertas automáticas para respuesta inmediata  
+- Registro de potenciales afectados  
+- Documentación precisa del incidente  
 
 ---
 
-Cumpliendo estos principios, **Cocacusca** podrá:
+## Ley de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE)
 
-- Mantener la **seguridad de su red**  
-- Respetar las **obligaciones legales**  
-- Garantizar la **integridad de su infraestructura digital**
+### Artículo 12 – Deber de seguridad
+Los prestadores de servicios están obligados a implementar las medidas técnicas necesarias para garantizar la seguridad de los datos y los servicios digitales.
 
+---
+
+## Esquema Nacional de Seguridad (ENS)
+
+Aunque no resulta obligatorio para empresas privadas, establece buenas prácticas aplicables en materia de seguridad TIC, entre ellas:
+
+- op.mon.1: Sistema de monitorización  
+- op.mon.2: Sistema de detección de intrusiones  
+- op.exp.8: Registro de actividad  
+
+---
+
+## Normativa PCI DSS (Payment Card Industry Data Security Standard)
+
+Dado que Cocacusca procesa pagos mediante tarjeta, son aplicables los siguientes requisitos del estándar PCI DSS:
+
+- Req. 10: Rastrear y monitorizar todos los accesos a recursos de red  
+- Req. 11.4: Uso de sistemas de detección o prevención de intrusiones  
