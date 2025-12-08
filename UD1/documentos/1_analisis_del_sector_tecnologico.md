@@ -1,7 +1,19 @@
 
 # *Análisis del sector tecnológico*
 ---
-Cocacusca es una empresa dedicada a la  distribución de productos antiguos. En los últimos años, ha apostado por la digitalización de sus procesos, incorporando sistemas informáticos para la gestión de inventarios, pedidos y ventas en línea.
+El sector del comercio electrónico de antigüedades ha experimentado un crecimiento significativo en los últimos años, especialmente tras la pandemia COVID-19. Según datos del sector, el comercio online de artículos de coleccionismo y antigüedades creció un 45% entre 2020 y 2023.
+Amenazas de ciberseguridad en el sector:
+Las pequeñas empresas de comercio electrónico son objetivos frecuentes de ciberataques:
 
-Este avance tecnológico ha incrementado su dependencia de las redes y sistemas digitales, lo que también ha aumentado el riesgo de sufrir ciberataques o accesos no autorizados. En este contexto, la seguridad informática se ha convertido en un aspecto esencial para garantizar la continuidad del negocio y la protección de la información.
-El sector tecnológico actual ofrece múltiples soluciones orientadas a la detección y monitorización de intrusiones, destacando herramientas como **Nmap (análisis de red)** , **Suricata (detección de ataques en tiempo real)**  y **Grafana (visualización de datos)** . Estas tecnologías, de carácter open-source y bajo coste, resultan especialmente adecuadas para pequeñas y medianas empresas como CocaCusca S.L., que buscan mejorar su seguridad mediante sistemas escalables y eficientes.
+Ataques de denegación de servicio (DDoS): Intentos de saturar el sitio web para dejarlo inaccesible
+Robo de datos de clientes: Información personal y datos de pago
+Ataques de fuerza bruta: Intentos de acceder a paneles de administración
+Escaneos de vulnerabilidades: Búsqueda automatizada de fallos de seguridad
+
+Estado actual de la ciberseguridad en PYMEs:
+Según el informe de Ciberseguridad de PYMEs 2024:
+
+- El 60% de las pequeñas empresas no tienen ningún sistema de detección de intrusos
+- El 43% sufrió algún tipo de ciberataque en el último año
+- El coste medio de un incidente de seguridad para una PYME es de 25.000€
+- El 80% de las PYMEs considera las soluciones comerciales demasiado caras (5.000-50.000€/año)
