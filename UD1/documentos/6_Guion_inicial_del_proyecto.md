@@ -61,16 +61,6 @@ Se utilizará una metodología **ágil** con sprints semanales:
 - **Sprint 5 (Semana 9-10):** Sistema de alertas y pruebas  
 - **Sprint 6 (Semana 11-12):** Documentación y formación  
 
----
-
-## Entregables
-
-- Sistema IDS funcional y operativo
-- Documentación técnica completa
-- Manual de usuario
-- Scripts de mantenimiento y auditoría
-- Procedimientos de respuesta a incidentes
-- Presentación ejecutiva para dirección
 
 
 
