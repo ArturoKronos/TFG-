@@ -40,6 +40,6 @@ AbuseIPDB
 AlienVault OTX
 
 Eso te permitiría:
- bloquear IPs automáticamente
- saber si un host pertenece a un botnet
+ bloquear IPs automáticamente,
+ saber si un host pertenece a un botnet y
  detectar ataques nuevos
