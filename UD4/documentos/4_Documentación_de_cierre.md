@@ -23,3 +23,23 @@ Todo problema que hemos ido viendo por el camino se ha solucionado de forma corr
 - Tambien podemos llegar a tener fallos más complejos como errores en la configuración de un archivo, al comprobarlo haciendo un test nos enseñara dicho error:
   
 ![hping3](../img/filebeat.png)
+
+## Posibles Mejoras Futuras
+
+Como todo se puede mejorar, de cara a un futuro podriamos haer las siguientes mejorar que podrían hacer nuestro proyecto algo más funcional o seguro:
+- Llevar la infraestructura a la nube
+Montarlo en:
+AWS
+Azure
+Google Cloud
+- Integración con CyberThreat Intelligence (CTI)
+  Fuentes:
+
+MISP
+AbuseIPDB
+AlienVault OTX
+
+Eso te permitiría:
+ bloquear IPs automáticamente
+ saber si un host pertenece a un botnet
+ detectar ataques nuevos
