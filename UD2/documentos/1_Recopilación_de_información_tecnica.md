@@ -1,38 +1,63 @@
-## Planificación de la implantación del sistema de monitorización e IDS en Cocacusca
-
-Para planificar la implantación del sistema de monitorización y detección de intrusiones en **Cocacusca**, se ha llevado a cabo una recopilación detallada de la información técnica referente a la infraestructura actual.
-
-### Análisis de la topología de red  
-En primer lugar, se ha estudiado la topología existente, compuesta por:
-
-- Una red local sencilla con un **router principal**.  
-- Varios **equipos de oficina** conectados a la red interna.  
-- Un **servidor central** encargado de almacenar documentación interna.  
-
-Asimismo, se han identificado:
-
-- El **rango de direcciones IP** actualmente en uso.  
-- Los **puertos** más utilizados por los servicios internos.  
-
-### Revisión del hardware disponible  
-Se ha verificado que la empresa cuenta con un **servidor con capacidad suficiente** para alojar las herramientas:
-
-- **Nmap**  
-- **Suricata**  
-- **Grafana**
-
-También se ha confirmado que el sistema operativo del servidor permite:
-
-- La instalación de software **de código abierto**.  
-- Su integración correcta dentro de la infraestructura existente.  
-
-### Requisitos de seguridad  
-Finalmente, se han recopilado los requisitos de seguridad y niveles de acceso del personal autorizado con el objetivo de:
-
-- Ajustar las **configuraciones del IDS**.  
-- Definir las **políticas de visualización de datos** en las herramientas de monitorización.  
+## *Planificación de la implantación del sistema de monitorización e IDS en Cocacusca*
+---
+# Infraestructura actual de Cocacusca Antigüedades
 
 ---
 
-Esta información técnica constituye la base para diseñar una infraestructura **funcional, segura y adaptada a las necesidades reales de Cocacusca**.
+## Hardware
+
+### Servidor web
+- **Modelo:** Dell OptiPlex 7040  
+- **CPU:** Intel i5-6500 @ 3.2GHz (4 cores)  
+- **RAM:** 16GB DDR4  
+- **Disco:** SSD 240GB + HDD 1TB  
+- **Sistema operativo:** Ubuntu Server 22.04 LTS  
+
+### Hardware disponible para IDS
+- **Modelo:** HP EliteDesk 800 G2 (sin uso actual)  
+- **CPU:** Intel i5-6500 @ 3.2GHz (4 cores)  
+- **RAM:** 8GB DDR4  
+- **Disco:** SSD 120GB  
+- **Sistema operativo:** A instalar (Ubuntu Server 24.04 LTS)  
+
+---
+
+## Red
+
+- **Router:** Movistar Fibra HGU (FTTH 600Mbps)  
+- **Switch:** TP-Link TL-SG108 (8 puertos Gigabit)  
+- **Topología:** Estrella simple  
+- **Rango IP interna:** 192.168.1.0/24  
+- **IP servidor web:** 192.168.1.100 (estática)  
+
+---
+
+## Software actual
+
+- WordPress 6.4  
+- WooCommerce 8.5  
+- MySQL 8.0  
+- Apache 2.4  
+- PHP 8.2  
+- SSH habilitado (puerto 22)  
+
+---
+
+## Tráfico estimado
+
+- **Visitas web diarias:** 500-800  
+- **Transacciones diarias:** 5-15  
+- **Tráfico mensual:** ~50GB  
+- **Picos de tráfico:** Black Friday, Navidad (~3x tráfico normal)  
+
+---
+
+## Amenazas detectadas (histórico de logs)
+
+- 127 intentos fallidos de SSH el último mes (diferentes IPs)  
+- 43 escaneos de puertos detectados en logs de Apache  
+- 2 intentos de SQL injection bloqueados por plugin de WordPress  
+- 1 ataque DDoS menor (20 min, automitigado por ISP)  
+
+
 
